@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: $main-size * 0.75;
+  color: black;
   @media only screen and (min-width: $breakpoint-desk) {
     font-size: $main-size;
   }

@@ -1,11 +1,11 @@
 /* Module: Hero */
 .m-Hero {
-  position: fixed;
-  top: 32px;
+  position: absolute;
+  top: calc(100vh - 3rem - 128px);
   left: 32px;
   width: 512px;
-  color: white;
-  z-index: 15;
+  color: black;
+  z-index: 40;
   pointer-events: none;
   @media only screen and (min-width: $breakpoint-desk) {
     top: 20vh;
@@ -24,7 +24,7 @@
     position: relative;
     padding: 0;
     background-color: transparent;
-    color: white;
+    color: black;
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
@@ -48,7 +48,7 @@
       right: 0;
       width: 30%;
       height: 2px;
-      background-color: white;
+      background-color: black;
       transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     &:hover:after {

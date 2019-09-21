@@ -6,7 +6,11 @@
 @import './shared/variables';
 @import './shared/base';
 
+/* Layouts */
+@import './layouts/Wrapper/index.scss';
+
 /* Modules */
 @import './modules/MainThree/index.scss';
 @import './modules/Hero/index.scss';
 @import './modules/Logos/index.scss';
+@import './modules/Content/index.scss';

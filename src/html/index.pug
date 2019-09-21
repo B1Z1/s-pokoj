@@ -49,7 +49,9 @@ html(lang="pl")
       }
   body
     .m-Preloader(data-js="Preloader")
-    include ./modules/Logos/index.pug
-    include ./modules/Hero/index.pug
-    include ./modules/MainThree/index.pug
+    .l-Wrapper
+      include ./modules/Logos/index.pug
+      include ./modules/Hero/index.pug
+      include ./modules/MainThree/index.pug
+      include ./modules/Content/index.pug
     script(src="../js/index.js")

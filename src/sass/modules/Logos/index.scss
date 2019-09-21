@@ -1,11 +1,13 @@
 /* Module: Logos */
 .m-Logos {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   max-width: 200px;
-  z-index: 13;
+  z-index: 21;
   @media only screen and (min-width: $breakpoint-desk) {
-    max-width: 418px;
+    bottom: 32px;
+    right: 32px;
+    max-width: 392px;
   }
 }

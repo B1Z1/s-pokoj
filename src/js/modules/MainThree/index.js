@@ -1,5 +1,9 @@
 import * as THREE from 'three'
+import ScrollMagic from 'scrollmagic'
+import { TimelineMax } from 'gsap'
+import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'
 
+const BREAKPOINT = 1280
 export class MainThree {
   constructor() {
     this.$MainThree = document.querySelector('[data-js="MainThree"]')
@@ -37,9 +41,8 @@ export class MainThree {
    * @function init
    */
   init() {
-    this.scene.background = new THREE.Color('black')
-
-    this.camera.position.z = 1.5
+    this.scene.background = new THREE.Color('white')
+    this.camera.position.z = window.innerWidth < BREAKPOINT ? 3 : 1.5
 
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -58,6 +61,22 @@ export class MainThree {
 
     //Animate
     this.animate()
+
+    //On Scroll
+    this.onScrollCamera()
+  }
+
+  /**
+   * @function onScrollCamera
+   */
+  onScrollCamera() {
+    const controller = new ScrollMagic.Controller(),
+      monitorScene = new ScrollMagic.Scene({
+        duration: window.innerHeight * 2,
+        tweenChanges: true,
+      })
+        .setTween(this.camera.rotation, { x: -2 })
+        .addTo(controller)
   }
 
   /**
@@ -187,10 +206,13 @@ export class MainThree {
   changeCameraRotation() {
     window.addEventListener('mousemove', ev => {
       let { clientX, clientY } = ev
-      this.camera.position.x = ((clientX - window.innerWidth / 2) * 0.005) / 50
-      this.camera.position.y =
-        ((clientY - window.innerHeight / 2) * 0.3 * 0.005) / 10
-      this.camera.lookAt(this.monitor.cube.position)
+      if (window.scrollY === 0) {
+        this.camera.position.x =
+          ((clientX - window.innerWidth / 2) * 0.005) / 50
+        this.camera.position.y =
+          ((clientY - window.innerHeight / 2) * 0.3 * 0.005) / 10
+        this.camera.lookAt(this.monitor.cube.position)
+      }
     })
   }
 }

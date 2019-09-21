@@ -1,0 +1,46 @@
+.m-Content {
+  position: relative;
+  padding-top: 100vh;
+  padding-bottom: 128px;
+  width: auto;
+  padding-right: 32px;
+  padding-left: 32px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 20;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+
+  @media only screen and (min-width: $breakpoint-desk) {
+    max-width: 768px;
+    padding-top: 100vh;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__slides {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 64px;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+  &__slide {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &--full {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
