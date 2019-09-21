@@ -1,0 +1,12 @@
+/* Libraries */
+@import '../../node_modules/reset-css/sass/reset';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+/* Shared */
+@import './shared/variables';
+@import './shared/base';
+
+/* Modules */
+@import './modules/MainThree/index.scss';
+@import './modules/Hero/index.scss';
+@import './modules/Logos/index.scss';

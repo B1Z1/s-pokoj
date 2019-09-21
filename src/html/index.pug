@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="pl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="description" content="S-Pokój - Połączenie wygodnego fotela z narzędziami relaksacyjnymi. Dzięki naszemu rozwiązaniu użytkownik zyskuje estetyczny mebel, który zapewnia nie tylko przestrzeń do relaksu, ale również ma do dyspozycji narzędzie terapeutyczne, które maksymalizują ten proces. Wygodne obiekty pozwalają na oderwanie się od wszechogarniającego stresu, a dostępne narzędzia są dedykowane zregenerowaniu sił i nabraniu nowych.")
+    meta(name="author" content="Illya Mishkin")
+    meta(name="keywords" content="s-pokoj, quiet, wygodny fotel, estetyczny mebel, relaks, narzędzie terapeutyczne, antystres")
+    meta(name="robots" content="index,follow")
+    title S-Pokoj
+    style(type="text/css").
+      .m-Preloader{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1000;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity, visibility;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      .m-Preloader--disabled{
+        opacity: 0;
+        visibility: hidden;
+      }
+      .m-Preloader:after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 50%;
+        height: 2px;
+        background-color: white;
+        transform: translateY(-50%);
+        animation: animate-preloader 0.6s ease-in-out infinite;
+      }
+      @keyframes animate-preloader{
+        0%{
+          transform: translate(-100%, -50%);
+        }
+        100%{
+          transform: translate(200%, -50%);
+        }
+      }
+  body
+    .m-Preloader(data-js="Preloader")
+    include ./modules/Logos/index.pug
+    include ./modules/Hero/index.pug
+    include ./modules/MainThree/index.pug
+    script(src="../js/index.js")
