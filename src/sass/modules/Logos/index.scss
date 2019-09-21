@@ -8,6 +8,9 @@
   @media only screen and (min-width: $breakpoint-desk) {
     bottom: 32px;
     right: 32px;
+    max-width: 250px;
+  }
+  @media only screen and (min-width: $breakpoint-l-desk) {
     max-width: 392px;
   }
 }

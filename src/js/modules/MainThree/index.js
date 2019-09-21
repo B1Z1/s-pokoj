@@ -177,6 +177,7 @@ export class MainThree {
         this.renderer.domElement.height !== height
     if (needResize) {
       this.renderer.setSize(width, height)
+      this.camera.position.z = width < BREAKPOINT ? 3 : 1.5
     }
 
     return needResize

@@ -1,7 +1,7 @@
 .m-Content {
   position: relative;
   padding-top: 100vh;
-  padding-bottom: 128px;
+  padding-bottom: 64px;
   width: auto;
   padding-right: 32px;
   padding-left: 32px;
@@ -42,5 +42,10 @@
       flex: 0 0 100%;
       max-width: 100%;
     }
+  }
+
+  &__video{
+    width: 100%;
+    height: auto;
   }
 }
